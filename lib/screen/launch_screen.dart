@@ -20,7 +20,7 @@ class LaunchScreen extends GetView<LaunchController> {
           Align(
               alignment: AlignmentDirectional.center,
               child: Image.asset(
-                'images/logo_app.png',
+                '${Const.images}logo.png',
               )),
         ],
       ),

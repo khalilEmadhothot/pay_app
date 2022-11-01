@@ -55,7 +55,7 @@ class _PaymentState extends State<Payment> {
             SizedBox(height: 73.h,),
             Align(
                 alignment: AlignmentDirectional.center,
-                child: Image.asset('images/image_Payment.png')),
+                child: Image.asset('images/icon_Payment.png')),
           ],
         ),
       ),

@@ -1,6 +1,7 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pay_app/utils/constants.dart';
 
 class LanguageScreen extends StatefulWidget {
   const LanguageScreen({Key? key}) : super(key: key);
@@ -28,7 +29,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
               Align(
                   alignment: AlignmentDirectional.center,
                   child: Image.asset(
-                    'images/image_page_view_one.png',
+                    '${Const.images}boarding1.png',
                     height: 200.h,
                     width: 200,
                   )),
@@ -74,7 +75,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                                   Align(
                                       alignment: AlignmentDirectional.center,
                                       child: Image.asset(
-                                        'images/image_client.png',
+                                        '${Const.icons}icon_client.png',
                                         fit: BoxFit.contain,
                                         height: 100,
                                       )),
@@ -129,7 +130,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                                   Align(
                                       alignment: AlignmentDirectional.center,
                                       child: Image.asset(
-                                        'images/image_merchant.png',
+                                        '${Const.icons}icon_merchant.png',
                                         fit: BoxFit.contain,
                                         height: 95,
                                       )),

@@ -13,45 +13,9 @@ class BoardingsController extends GetxController {
   int currentPage = 0;
 
   List<Boarding> listBoardings = [
-    BoardingItem(
-      ImagePage: 'images/image_page_view_one.png',
-      Title: 'ادفعلي  ',
-      Title2:
-      ' استلم قيمة مبيعاتك من زبونك قبل ان تخرج\n            بضاعتك من متجرك او منزلك . ',
-    ),
-    BoardingItem(
-      ImagePage: 'images/image_page_view_tow.png',
-      Title: 'ادفعلي  ',
-      Title2:
-      ' استلم قيمة مبيعاتك من زبونك قبل ان تخرج\n            بضاعتك من متجرك او منزلك . ',
-    ),
-    BoardingItem(
-      ImagePage: 'images/image_page_view_three.png',
-      Title: 'ادفعلي  ',
-      Title2:
-      ' استلم قيمة مبيعاتك من زبونك قبل ان تخرج\n            بضاعتك من متجرك او منزلك . ',
-    ),
-  ];
-
-  List<Widget> listBoardingss = [
-    BoardingItem(
-      ImagePage: 'images/image_page_view_one.png',
-      Title: 'ادفعلي  ',
-      Title2:
-          ' استلم قيمة مبيعاتك من زبونك قبل ان تخرج\n            بضاعتك من متجرك او منزلك . ',
-    ),
-    BoardingItem(
-      ImagePage: 'images/image_page_view_tow.png',
-      Title: 'ادفعلي  ',
-      Title2:
-          ' استلم قيمة مبيعاتك من زبونك قبل ان تخرج\n            بضاعتك من متجرك او منزلك . ',
-    ),
-    BoardingItem(
-      ImagePage: 'images/image_page_view_three.png',
-      Title: 'ادفعلي  ',
-      Title2:
-          ' استلم قيمة مبيعاتك من زبونك قبل ان تخرج\n            بضاعتك من متجرك او منزلك . ',
-    ),
+    Boarding(image: '${Const.images}boarding1.png', title: 'ادفعلي  ', subTitle: ' استلم قيمة مبيعاتك من زبونك قبل ان تخرج\n            بضاعتك من متجرك او منزلك . '),
+    Boarding(image: '${Const.images}boarding2.png', title: 'ادفعلي  ', subTitle: ' استلم قيمة مبيعاتك من زبونك قبل ان تخرج\n            بضاعتك من متجرك او منزلك . '),
+    Boarding(image: '${Const.images}boarding3.png', title: 'ادفعلي  ', subTitle: ' استلم قيمة مبيعاتك من زبونك قبل ان تخرج\n            بضاعتك من متجرك او منزلك . '),
   ];
 
   @override

@@ -25,7 +25,7 @@ class BoardingScreen extends GetView<BoardingsController> {
                       scrollDirection: Axis.horizontal,
                       onPageChanged: (int page) =>
                           controller.getCurrentPage(currentPage: page),
-                      children: controller.listBoardings.map((e) => BoardingItem(ImagePage: '', Title: '', Title2: '',)).toList(),
+                      children: controller.listBoardings.map((page) =>  BoardingItem(ImagePage: page.image, Title: page.title, Title2: page.subTitle)).toList(),
                     ),
                   ),
                   SizedBox(

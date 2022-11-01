@@ -120,7 +120,7 @@ class _AccountTypeState extends State<AccountType> {
                 padding: const EdgeInsetsDirectional.only(
                     top: 26, bottom: 25, start: 5),
                 child: ListTile(
-                  leading: Image.asset('images/image_com.png'),
+                  leading: Image.asset('images/icon_com.png'),
                   title: Text(
                     'corporate_account'.tr,
                     style: TextStyle(
