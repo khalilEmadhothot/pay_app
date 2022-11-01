@@ -1,5 +1,6 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:pay_app/widget/widget_faild_companies.dart';
 
 class SingleLogin extends StatefulWidget {
@@ -55,6 +56,12 @@ class _SingleLoginState extends State<SingleLogin> {
       appBar: AppBar(
         backgroundColor: const Color(0xff0E3255),
         toolbarHeight: 85.h,
+        centerTitle: true,
+        title: Text(
+          'New_registration'.tr,
+          style: TextStyle(
+              color: Colors.white, fontWeight: FontWeight.w500, fontSize: 19.h),
+        ),
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
               bottomRight: Radius.circular(11.0),
@@ -66,7 +73,7 @@ class _SingleLoginState extends State<SingleLogin> {
             icon: const Icon(
               Icons.arrow_forward_ios,
               color: Colors.white,
-              size: 23,
+              size: 20,
             ),
           ),
         ],
@@ -81,33 +88,27 @@ class _SingleLoginState extends State<SingleLogin> {
               height: 32.h,
             ),
             const widget_text_companies(
-              name: 'Firest Name',
+              name: 'First_Name',
             ),
             SizedBox(
               height: 12.h,
             ),
-            WidgetTextFaildCompanies(
-              text: 'English onlys',
-              fierstnameTextController: _fierstnameTextController,
-            ),
+
             SizedBox(
               height: 16.h,
             ),
             const widget_text_companies(
-              name: 'Lest Name',
+              name: 'last_name',
             ),
             SizedBox(
               height: 12.h,
             ),
-            WidgetTextFaildCompanies(
-              text: 'English onlys',
-              fierstnameTextController: _lestnameTextController,
-            ),
+
             SizedBox(
               height: 16.h,
             ),
             const widget_text_companies(
-              name: 'Trade Name',
+              name: 'Trade_Name',
             ),
             SizedBox(
               height: 12.h,
@@ -118,7 +119,7 @@ class _SingleLoginState extends State<SingleLogin> {
               height: 16.h,
             ),
             const widget_text_companies(
-              name: 'Trade Name',
+              name: 'bank',
             ),
             SizedBox(
               height: 12.h,
@@ -128,7 +129,7 @@ class _SingleLoginState extends State<SingleLogin> {
               height: 16.h,
             ),
             const widget_text_companies(
-              name: 'i ban',
+              name: 'i_ban',
             ),
             SizedBox(
               height: 12.h,
@@ -138,7 +139,7 @@ class _SingleLoginState extends State<SingleLogin> {
               height: 16.h,
             ),
             const widget_text_companies(
-              name: 'Phone',
+              name: 'phone',
             ),
             SizedBox(
               height: 12.h,
@@ -148,7 +149,7 @@ class _SingleLoginState extends State<SingleLogin> {
               height: 16.h,
             ),
             const widget_text_companies(
-              name: 'email',
+              name: 'Email',
             ),
             SizedBox(
               height: 12.h,
@@ -158,7 +159,7 @@ class _SingleLoginState extends State<SingleLogin> {
               height: 16.h,
             ),
             const widget_text_companies(
-              name: 'facebook link',
+              name: 'facebook_link',
             ),
             SizedBox(
               height: 12.h,
@@ -169,7 +170,7 @@ class _SingleLoginState extends State<SingleLogin> {
               height: 16.h,
             ),
             const widget_text_companies(
-              name: 'instagram link',
+              name: 'Instagram_link',
             ),
             SizedBox(
               height: 12.h,
@@ -177,7 +178,7 @@ class _SingleLoginState extends State<SingleLogin> {
             widget_feial_instageam(
                 instagramTextController: _instagramTextController),
             SizedBox(height:37.h ,),
-            const widget_button(name: 'New Registration',),
+            const widget_button(name: 'New_registration',),
 
           ],
         ),
@@ -208,7 +209,7 @@ class widget_button extends StatelessWidget {
             primary: const Color(0xffF58A07),
           ),
           child: Text(
-            name,
+            name.tr,
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.w500,
@@ -253,11 +254,13 @@ class widget_feial_instageam extends StatelessWidget {
             color: Color(0xff0E3255),
             size: 18,
           ),
-          labelText: 'my choice',
+          labelText: 'my choice'.tr,
           labelStyle: TextStyle(
               fontSize: 13.sp,
               fontStyle: FontStyle.italic,
-              color: const Color(0xffb3baa6),
+              color: const Color(0xff99ABBD
+              ),
+
               fontWeight: FontWeight.w400),
           fillColor: const Color(0xffFAFAFA),
           filled: true,
@@ -311,11 +314,13 @@ class widget_feaild_facebook extends StatelessWidget {
             color: Color(0xff0E3255),
             size: 18,
           ),
-          labelText: 'my choice',
+          labelText: 'my choice'.tr,
           labelStyle: TextStyle(
               fontSize: 13.sp,
               fontStyle: FontStyle.italic,
-              color: const Color(0xffb3baa6),
+              color: const Color(0xff99ABBD
+              ),
+
               fontWeight: FontWeight.w400),
           fillColor: const Color(0xffFAFAFA),
           filled: true,
@@ -369,11 +374,13 @@ class widget_feaild_email extends StatelessWidget {
             color: Color(0xff0E3255),
             size: 18,
           ),
-          labelText: 'email',
+          labelText: 'email'.tr,
           labelStyle: TextStyle(
               fontSize: 13.sp,
               fontStyle: FontStyle.italic,
-              color: const Color(0xffb3baa6),
+              color: const Color(0xff99ABBD
+              ),
+
               fontWeight: FontWeight.w400),
           fillColor: const Color(0xffFAFAFA),
           filled: true,
@@ -427,11 +434,13 @@ class widget_feaild_phone extends StatelessWidget {
             color: Color(0xff0E3255),
             size: 18,
           ),
-          labelText: 'phone',
+          labelText: 'phone'.tr,
           labelStyle: TextStyle(
               fontSize: 13.sp,
               fontStyle: FontStyle.italic,
-              color: const Color(0xffb3baa6),
+              color: const Color(0xff99ABBD
+              ),
+
               fontWeight: FontWeight.w400),
           fillColor: const Color(0xffFAFAFA),
           filled: true,
@@ -481,7 +490,7 @@ class widget_feaild_iban extends StatelessWidget {
             fontWeight: FontWeight.w500, fontSize: 16.sp, color: Colors.black),
         decoration: InputDecoration(
           prefixIcon: const Icon(
-            Icons.maps_home_work_outlined,
+            Icons.keyboard_alt_outlined,
             color: Color(0xff0E3255),
             size: 18,
           ),
@@ -489,7 +498,9 @@ class widget_feaild_iban extends StatelessWidget {
           labelStyle: TextStyle(
               fontSize: 13.sp,
               fontStyle: FontStyle.italic,
-              color: const Color(0xffb3baa6),
+              color: const Color(0xff99ABBD
+              ),
+
               fontWeight: FontWeight.w400),
           fillColor: const Color(0xffFAFAFA),
           filled: true,
@@ -539,15 +550,17 @@ class widget_feaild_bank extends StatelessWidget {
             fontWeight: FontWeight.w500, fontSize: 16.sp, color: Colors.black),
         decoration: InputDecoration(
           prefixIcon: const Icon(
-            Icons.maps_home_work_outlined,
+            Icons.comment_bank_outlined ,
             color: Color(0xff0E3255),
             size: 18,
           ),
-          labelText: 'bank',
+          labelText: 'bank'.tr,
           labelStyle: TextStyle(
               fontSize: 13.sp,
               fontStyle: FontStyle.italic,
-              color: const Color(0xffb3baa6),
+              color: const Color(0xff99ABBD
+              ),
+
               fontWeight: FontWeight.w400),
           fillColor: const Color(0xffFAFAFA),
           filled: true,
@@ -597,15 +610,17 @@ class widget_trade_name extends StatelessWidget {
             fontWeight: FontWeight.w500, fontSize: 16.sp, color: Colors.black),
         decoration: InputDecoration(
           prefixIcon: const Icon(
-            Icons.maps_home_work_outlined,
+            Icons.business_outlined ,
             color: Color(0xff0E3255),
             size: 18,
           ),
-          labelText: 'Business name',
+          labelText: 'Business name'.tr,
           labelStyle: TextStyle(
               fontSize: 13.sp,
               fontStyle: FontStyle.italic,
-              color: const Color(0xffb3baa6),
+              color: const Color(0xff99ABBD
+              ),
+
               fontWeight: FontWeight.w400),
           fillColor: const Color(0xffFAFAFA),
           filled: true,
@@ -641,7 +656,7 @@ class widget_text_companies extends StatelessWidget {
     return Padding(
       padding: const EdgeInsetsDirectional.only(start: 17),
       child: Text(
-        name,
+        name.tr,
         style: TextStyle(
           color: const Color(0xff0E3255),
           fontWeight: FontWeight.w500,

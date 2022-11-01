@@ -1,5 +1,6 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:pay_app/screen/auth/client_login.dart';
 import 'package:pay_app/screen/auth/companies_login.dart';
 import 'package:pay_app/widget/widget_faild_companies.dart';
@@ -55,6 +56,11 @@ class _ClientLoginState extends State<ClientLogin> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        title: Text(
+          'Transformation'.tr,
+          style: TextStyle(
+              color: Colors.white, fontWeight: FontWeight.w500, fontSize: 19.h),
+        ),
         backgroundColor: const Color(0xff0E3255),
         toolbarHeight: 85.h,
         shape: const RoundedRectangleBorder(
@@ -83,13 +89,13 @@ class _ClientLoginState extends State<ClientLogin> {
               height: 32.h,
             ),
             const widget_text_companies(
-              name: 'Merchant code',
+              name: 'Merchant_code',
             ),
             SizedBox(
               height: 12.h,
             ),
             WidgetTextFaildCompanies(
-              text: 'Merchant code',
+              text: 'Merchant_code',
               fierstnameTextController: _codeTextController,
             ),
             SizedBox(
@@ -109,18 +115,17 @@ class _ClientLoginState extends State<ClientLogin> {
               height: 16.h,
             ),
             const widget_text_companies(
-              name: 'Buyer No',
+              name: 'Buyer_No',
             ),
             SizedBox(
               height: 12.h,
             ),
-            widget_trade_name(
-                tradenameTextController: _BuyerNoTextController),
+            widget_trade_name(tradenameTextController: _BuyerNoTextController),
             SizedBox(
               height: 16.h,
             ),
             const widget_text_companies(
-              name: 'Buyer No',
+              name: 'Buyer_No',
             ),
             SizedBox(
               height: 12.h,
@@ -130,7 +135,7 @@ class _ClientLoginState extends State<ClientLogin> {
               height: 16.h,
             ),
             const widget_text_companies(
-              name: 'email',
+              name: 'Email',
             ),
             SizedBox(
               height: 12.h,
@@ -144,8 +149,7 @@ class _ClientLoginState extends State<ClientLogin> {
               child: Padding(
                 padding: const EdgeInsetsDirectional.only(end: 33, start: 33),
                 child: ElevatedButton(
-                  onPressed: () async {
-                  },
+                  onPressed: () async {},
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8).r,
@@ -154,7 +158,7 @@ class _ClientLoginState extends State<ClientLogin> {
                     primary: const Color(0xffF58A07),
                   ),
                   child: Text(
-                    'تسجيل الدخول ',
+                    'sign_in'.tr,
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
@@ -165,7 +169,6 @@ class _ClientLoginState extends State<ClientLogin> {
                 ),
               ),
             ),
-
           ],
         ),
       ),
@@ -175,9 +178,11 @@ class _ClientLoginState extends State<ClientLogin> {
 
 class widget_button extends StatelessWidget {
   const widget_button({
-    Key? key, required this.name,
+    Key? key,
+    required this.name,
   }) : super(key: key);
   final String name;
+
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -185,8 +190,7 @@ class widget_button extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsetsDirectional.only(end: 33, start: 33),
         child: ElevatedButton(
-          onPressed: () async {
-          },
+          onPressed: () async {},
           style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8).r,
@@ -195,7 +199,7 @@ class widget_button extends StatelessWidget {
             primary: const Color(0xffF58A07),
           ),
           child: Text(
-            name,
+            name.tr,
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.w500,
@@ -203,7 +207,6 @@ class widget_button extends StatelessWidget {
             ),
             textAlign: TextAlign.center,
           ),
-
         ),
       ),
     );
@@ -240,7 +243,7 @@ class widget_feial_instageam extends StatelessWidget {
             color: Color(0xff0E3255),
             size: 18,
           ),
-          labelText: 'my choice',
+          labelText: 'my_choice'.tr,
           labelStyle: TextStyle(
               fontSize: 13.sp,
               fontStyle: FontStyle.italic,
@@ -255,7 +258,7 @@ class widget_feial_instageam extends StatelessWidget {
           ),
           focusedBorder: OutlineInputBorder(
             borderSide:
-            BorderSide(color: const Color(0xff0E3255), width: 1.5.w),
+                BorderSide(color: const Color(0xff0E3255), width: 1.5.w),
             borderRadius: BorderRadius.circular(8),
           ),
           constraints: BoxConstraints(
@@ -298,7 +301,7 @@ class widget_feaild_facebook extends StatelessWidget {
             color: Color(0xff0E3255),
             size: 18,
           ),
-          labelText: 'my choice',
+          labelText: 'my_choice'.tr,
           labelStyle: TextStyle(
               fontSize: 13.sp,
               fontStyle: FontStyle.italic,
@@ -313,7 +316,7 @@ class widget_feaild_facebook extends StatelessWidget {
           ),
           focusedBorder: OutlineInputBorder(
             borderSide:
-            BorderSide(color: const Color(0xff0E3255), width: 1.5.w),
+                BorderSide(color: const Color(0xff0E3255), width: 1.5.w),
             borderRadius: BorderRadius.circular(8),
           ),
           constraints: BoxConstraints(
@@ -356,7 +359,7 @@ class widget_feaild_email extends StatelessWidget {
             color: Color(0xff0E3255),
             size: 18,
           ),
-          labelText: 'email',
+          labelText: 'Email',
           labelStyle: TextStyle(
               fontSize: 13.sp,
               fontStyle: FontStyle.italic,
@@ -371,7 +374,7 @@ class widget_feaild_email extends StatelessWidget {
           ),
           focusedBorder: OutlineInputBorder(
             borderSide:
-            BorderSide(color: const Color(0xff0E3255), width: 1.5.w),
+                BorderSide(color: const Color(0xff0E3255), width: 1.5.w),
             borderRadius: BorderRadius.circular(8),
           ),
           constraints: BoxConstraints(
@@ -429,7 +432,7 @@ class widget_feaild_phone extends StatelessWidget {
           ),
           focusedBorder: OutlineInputBorder(
             borderSide:
-            BorderSide(color: const Color(0xff0E3255), width: 1.5.w),
+                BorderSide(color: const Color(0xff0E3255), width: 1.5.w),
             borderRadius: BorderRadius.circular(8),
           ),
           constraints: BoxConstraints(
@@ -487,7 +490,7 @@ class widget_feaild_iban extends StatelessWidget {
           ),
           focusedBorder: OutlineInputBorder(
             borderSide:
-            BorderSide(color: const Color(0xff0E3255), width: 1.5.w),
+                BorderSide(color: const Color(0xff0E3255), width: 1.5.w),
             borderRadius: BorderRadius.circular(8),
           ),
           constraints: BoxConstraints(
@@ -530,7 +533,7 @@ class widget_feaild_bank extends StatelessWidget {
             color: Color(0xff0E3255),
             size: 18,
           ),
-          labelText: 'bank',
+          labelText: 'bank'.tr,
           labelStyle: TextStyle(
               fontSize: 13.sp,
               fontStyle: FontStyle.italic,
@@ -545,7 +548,7 @@ class widget_feaild_bank extends StatelessWidget {
           ),
           focusedBorder: OutlineInputBorder(
             borderSide:
-            BorderSide(color: const Color(0xff0E3255), width: 1.5.w),
+                BorderSide(color: const Color(0xff0E3255), width: 1.5.w),
             borderRadius: BorderRadius.circular(8),
           ),
           constraints: BoxConstraints(
@@ -557,7 +560,3 @@ class widget_feaild_bank extends StatelessWidget {
     );
   }
 }
-
-
-
-

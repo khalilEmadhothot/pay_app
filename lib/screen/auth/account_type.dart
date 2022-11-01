@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class AccountType extends StatefulWidget {
   const AccountType({Key? key}) : super(key: key);
@@ -23,6 +24,12 @@ class _AccountTypeState extends State<AccountType> {
       appBar: AppBar(
         backgroundColor: const Color(0xff0E3255),
         toolbarHeight: 85.h,
+        centerTitle: true,
+        title: Text(
+          'account_type'.tr,
+          style: TextStyle(
+              color: Colors.white, fontWeight: FontWeight.w500, fontSize: 19.h),
+        ),
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
               bottomRight: Radius.circular(11.0),
@@ -34,7 +41,7 @@ class _AccountTypeState extends State<AccountType> {
             icon: const Icon(
               Icons.arrow_forward_ios,
               color: Colors.white,
-              size: 23,
+              size: 20,
             ),
           ),
         ],
@@ -47,7 +54,7 @@ class _AccountTypeState extends State<AccountType> {
           Align(
             alignment: AlignmentDirectional.center,
             child: Text(
-              'Choose the type of account',
+              'Choose_the_type_of_account'.tr,
               style: TextStyle(
                   fontWeight: FontWeight.w500,
                   fontSize: 18.h,
@@ -72,7 +79,7 @@ class _AccountTypeState extends State<AccountType> {
                 child: ListTile(
                   leading: Image.asset('images/image_account.png'),
                   title: Text(
-                    'single account',
+                    'single_account'.tr,
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 15.h,
@@ -81,7 +88,7 @@ class _AccountTypeState extends State<AccountType> {
                   ),
                   minLeadingWidth: 5,
                   subtitle: Text(
-                    'For small or home projects',
+                    'For_small_or_home_projects'.tr,
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 15.h,
@@ -115,7 +122,7 @@ class _AccountTypeState extends State<AccountType> {
                 child: ListTile(
                   leading: Image.asset('images/image_com.png'),
                   title: Text(
-                    'corporate account',
+                    'corporate_account'.tr,
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 15.h,
@@ -123,7 +130,7 @@ class _AccountTypeState extends State<AccountType> {
                     ),
                   ),
                   subtitle: Text(
-                    ' a company or an organization',
+                    'company_or_an_organization'.tr,
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 15.h,

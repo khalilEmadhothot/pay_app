@@ -19,7 +19,7 @@ class WidgetTextFaildCompanies extends StatelessWidget {
 
       child:   TextField(
 
-        keyboardType: TextInputType.number,
+        keyboardType: TextInputType.name,
 
 
         controller: _TextController,
@@ -106,7 +106,7 @@ class WidgetTextFaildCompanies extends StatelessWidget {
 
 
 
-              color: const Color(0xffb3baa6
+              color: const Color(0xff4a6269
               ),
 
 

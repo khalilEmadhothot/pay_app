@@ -1,5 +1,9 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:pay_app/routes/routes.dart';
+import 'package:pay_app/utils/constants.dart';
+import 'package:pay_app/utils/preferences_manager.dart';
 import '../../widget/out_boarding_indicator.dart';
 import '../../widget/widget_boarding.dart';
 
@@ -49,28 +53,27 @@ class _OutBoardingScreenState extends State<OutBoardingScreen> {
                 widget_boarding(
                   ImagePage: 'images/image_page_view_one.png',
                   Title: 'ادفعلي  ',
-
                   Title2:
                       ' استلم قيمة مبيعاتك من زبونك قبل ان تخرج\n            بضاعتك من متجرك او منزلك . ',
                 ),
                 widget_boarding(
                   ImagePage: 'images/image_page_view_tow.png',
                   Title: 'ادفعلي  ',
-
                   Title2:
-                  ' استلم قيمة مبيعاتك من زبونك قبل ان تخرج\n            بضاعتك من متجرك او منزلك . ',
+                      ' استلم قيمة مبيعاتك من زبونك قبل ان تخرج\n            بضاعتك من متجرك او منزلك . ',
                 ),
                 widget_boarding(
                   ImagePage: 'images/image_page_view_three.png',
                   Title: 'ادفعلي  ',
-
                   Title2:
-                  ' استلم قيمة مبيعاتك من زبونك قبل ان تخرج\n            بضاعتك من متجرك او منزلك . ',
+                      ' استلم قيمة مبيعاتك من زبونك قبل ان تخرج\n            بضاعتك من متجرك او منزلك . ',
                 ),
               ],
             ),
           ),
-          SizedBox(height: 40.h,),
+          SizedBox(
+            height: 40.h,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -88,9 +91,11 @@ class _OutBoardingScreenState extends State<OutBoardingScreen> {
               ),
             ],
           ),
-          SizedBox(height: 65.h,),
+          SizedBox(
+            height: 65.h,
+          ),
           Padding(
-            padding: const EdgeInsetsDirectional.only(start: 17,end: 16),
+            padding: const EdgeInsetsDirectional.only(start: 17, end: 16),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -100,15 +105,13 @@ class _OutBoardingScreenState extends State<OutBoardingScreen> {
                     maintainState: true,
                     child: InkWell(
                       onTap: () {
-                        _pageController.previousPage(
-                            duration: const Duration(seconds: 1),
-                            curve: Curves.easeInCirc);
-
+                        PreferencesManager.saveAppData(key: Const.KEY_BOARDING, value: true)
+                            .then((value) => Get.offAndToNamed(Routes.language));
                       },
                       child: Text(
                         'تخطى',
                         style: TextStyle(
-                            color: Colors.black,
+                            color: Color(0xff063255),
                             decoration: TextDecoration.underline,
                             fontSize: 20.h,
                             fontWeight: FontWeight.w600),
@@ -117,7 +120,8 @@ class _OutBoardingScreenState extends State<OutBoardingScreen> {
                 InkWell(
                   onTap: () {
                     _pageController.nextPage(
-                        duration: const Duration(seconds: 1), curve: Curves.easeInCirc);
+                        duration: const Duration(seconds: 1),
+                        curve: Curves.easeInCirc);
                   },
                   child: Container(
                     width: 55.w,
@@ -134,7 +138,9 @@ class _OutBoardingScreenState extends State<OutBoardingScreen> {
               ],
             ),
           ),
-          const SizedBox(height: 45,),
+          const SizedBox(
+            height: 45,
+          ),
         ],
       ),
     );

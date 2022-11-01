@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class FeeScreen extends StatefulWidget {
   const FeeScreen({Key? key}) : super(key: key);
 
@@ -41,7 +42,9 @@ class _FeeScreenState extends State<FeeScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          SizedBox(height: 40.h,),
+          SizedBox(
+            height: 40.h,
+          ),
           Align(
             alignment: AlignmentDirectional.center,
             child: Container(
@@ -49,12 +52,12 @@ class _FeeScreenState extends State<FeeScreen> {
               height: 44.h,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8).r,
-                color: Colors.grey,
+                color: Color(0xffb9c4cd),
               ),
               child: Padding(
-                padding: const EdgeInsetsDirectional.only(start:5 ,end:5 ),
+                padding: const EdgeInsetsDirectional.only(start: 8, end: 8),
                 child: Row(
-mainAxisAlignment:MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       'card',
@@ -85,7 +88,9 @@ mainAxisAlignment:MainAxisAlignment.spaceBetween,
               ),
             ),
           ),
-          SizedBox(height: 37.h,),
+          SizedBox(
+            height: 37.h,
+          ),
           Align(
             alignment: AlignmentDirectional.center,
             child: Container(
@@ -93,15 +98,15 @@ mainAxisAlignment:MainAxisAlignment.spaceBetween,
               height: 44.h,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8).r,
-                color: Colors.grey,
+                color: const Color(0xfff1f3f5),
               ),
               child: Padding(
-                padding: const EdgeInsetsDirectional.only(start:5 ,end:5 ),
+                padding: const EdgeInsetsDirectional.only(start: 8, end: 8),
                 child: Row(
-                  mainAxisAlignment:MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'card',
+                      'kent',
                       style: TextStyle(
                         color: const Color(0xff0E3255),
                         fontWeight: FontWeight.w600,
@@ -109,7 +114,7 @@ mainAxisAlignment:MainAxisAlignment.spaceBetween,
                       ),
                     ),
                     Text(
-                      'Merchant',
+                      '3%',
                       style: TextStyle(
                         color: const Color(0xff0E3255),
                         fontWeight: FontWeight.w600,
@@ -117,7 +122,7 @@ mainAxisAlignment:MainAxisAlignment.spaceBetween,
                       ),
                     ),
                     Text(
-                      'Client',
+                      '350fils',
                       style: TextStyle(
                         color: const Color(0xff0E3255),
                         fontWeight: FontWeight.w600,
@@ -129,7 +134,9 @@ mainAxisAlignment:MainAxisAlignment.spaceBetween,
               ),
             ),
           ),
-          SizedBox(height: 20.h,),
+          SizedBox(
+            height: 20.h,
+          ),
           Align(
             alignment: AlignmentDirectional.center,
             child: Container(
@@ -137,15 +144,15 @@ mainAxisAlignment:MainAxisAlignment.spaceBetween,
               height: 44.h,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8).r,
-                color: Colors.grey,
+                color: const Color(0xfff1f3f5),
               ),
               child: Padding(
-                padding: const EdgeInsetsDirectional.only(start:5 ,end:5 ),
+                padding: const EdgeInsetsDirectional.only(start: 8, end: 8),
                 child: Row(
-                  mainAxisAlignment:MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'card',
+                      'kent',
                       style: TextStyle(
                         color: const Color(0xff0E3255),
                         fontWeight: FontWeight.w600,
@@ -153,7 +160,7 @@ mainAxisAlignment:MainAxisAlignment.spaceBetween,
                       ),
                     ),
                     Text(
-                      'Merchant',
+                      '3%',
                       style: TextStyle(
                         color: const Color(0xff0E3255),
                         fontWeight: FontWeight.w600,
@@ -161,7 +168,7 @@ mainAxisAlignment:MainAxisAlignment.spaceBetween,
                       ),
                     ),
                     Text(
-                      'Client',
+                      '350fils',
                       style: TextStyle(
                         color: const Color(0xff0E3255),
                         fontWeight: FontWeight.w600,
@@ -173,7 +180,9 @@ mainAxisAlignment:MainAxisAlignment.spaceBetween,
               ),
             ),
           ),
-          SizedBox(height: 20.h,),
+          SizedBox(
+            height: 20.h,
+          ),
           Align(
             alignment: AlignmentDirectional.center,
             child: Container(
@@ -181,15 +190,15 @@ mainAxisAlignment:MainAxisAlignment.spaceBetween,
               height: 44.h,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8).r,
-                color: Colors.grey,
+                color: Color(0xfff1f3f5),
               ),
               child: Padding(
-                padding: const EdgeInsetsDirectional.only(start:5 ,end:5 ),
+                padding: const EdgeInsetsDirectional.only(start: 8, end: 8),
                 child: Row(
-                  mainAxisAlignment:MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'card',
+                      'kent',
                       style: TextStyle(
                         color: const Color(0xff0E3255),
                         fontWeight: FontWeight.w600,
@@ -197,7 +206,7 @@ mainAxisAlignment:MainAxisAlignment.spaceBetween,
                       ),
                     ),
                     Text(
-                      'Merchant',
+                      '3%',
                       style: TextStyle(
                         color: const Color(0xff0E3255),
                         fontWeight: FontWeight.w600,
@@ -205,7 +214,7 @@ mainAxisAlignment:MainAxisAlignment.spaceBetween,
                       ),
                     ),
                     Text(
-                      'Client',
+                      '350fils',
                       style: TextStyle(
                         color: const Color(0xff0E3255),
                         fontWeight: FontWeight.w600,
@@ -217,7 +226,6 @@ mainAxisAlignment:MainAxisAlignment.spaceBetween,
               ),
             ),
           ),
-
         ],
       ),
     );

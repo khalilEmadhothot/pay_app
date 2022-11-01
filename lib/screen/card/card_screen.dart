@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -46,7 +48,7 @@ class _CardScreenState extends State<CardScreen> {
             height: 35.h,
           ),
           Padding(
-            padding: const EdgeInsetsDirectional.only(start: 16),
+            padding: const EdgeInsetsDirectional.only(start: 19),
             child: Text(
               'Civil ID documentation',
               style: TextStyle(
@@ -57,39 +59,46 @@ class _CardScreenState extends State<CardScreen> {
             ),
           ),
           SizedBox(
-            height: 8.h,
+            height: 10.h,
           ),
-          Align(
-            alignment: AlignmentDirectional.center,
-            child: Container(
+          InkWell(
+            onTap: () {},
+            child: Align(
               alignment: AlignmentDirectional.center,
-              width: 343.w,
-              height: 165.h,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: const Color(0xffD9D9D9),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.add,
-                        size: 30.h,
-                      )),
-                  SizedBox(
-                    height: 8.h,
-                  ),
-                  Text(
-                    'Add civil ID',
-                    style: TextStyle(
-                      color: const Color(0xff0E3255),
-                      fontWeight: FontWeight.w500,
-                      fontSize: 16.h,
+              child: Container(
+                alignment: AlignmentDirectional.center,
+                width: 343.w,
+                height: 165.h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  color: const Color(0xffD9D9D9),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.add,
+                          size: 35.h,
+                          color: const Color(0xff91a3b0),
+                        )),
+                    SizedBox(
+                      height: 8.h,
                     ),
-                  ),
-                ],
+                    InkWell(
+                      onTap: () {},
+                      child: Text(
+                        'Add civil ID',
+                        style: TextStyle(
+                          color: const Color(0xff0E3255),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16.h,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
@@ -97,7 +106,7 @@ class _CardScreenState extends State<CardScreen> {
             height: 24.h,
           ),
           Padding(
-            padding: const EdgeInsetsDirectional.only(start: 16),
+            padding: const EdgeInsetsDirectional.only(start: 19),
             child: Text(
               'Bank card authentication',
               style: TextStyle(
@@ -108,40 +117,49 @@ class _CardScreenState extends State<CardScreen> {
             ),
           ),
           SizedBox(
-            height: 8.h,
+            height: 10.h,
           ),
-          Align(
-            alignment: AlignmentDirectional.center,
-            child: Container(
-              alignment: AlignmentDirectional.center,
-              width: 343.w,
-              height: 165.h,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8).r
-                ,
-                color: const Color(0xffD9D9D9),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.add,
-                        size: 30.h,
-                      )),
-                  SizedBox(
-                    height: 8.h,
+          InkWell(
+            onTap: () {},
+            child: InkWell(
+              onTap: () {},
+              child: Align(
+                alignment: AlignmentDirectional.center,
+                child: Container(
+                  alignment: AlignmentDirectional.center,
+                  width: 343.w,
+                  height: 165.h,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8).r,
+                    color: const Color(0xffD9D9D9),
                   ),
-                  Text(
-                    'Add a bank card',
-                    style: TextStyle(
-                      color: const Color(0xff0E3255),
-                      fontWeight: FontWeight.w500,
-                      fontSize: 16.h,
-                    ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.add,
+                            size: 35.h,
+                            color: const Color(0xff91a3b0),
+                          )),
+                      SizedBox(
+                        height: 8.h,
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: Text(
+                          'Add a bank card',
+                          style: TextStyle(
+                            color: const Color(0xff0E3255),
+                            fontWeight: FontWeight.w500,
+                            fontSize: 16.h,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
             ),
           ),

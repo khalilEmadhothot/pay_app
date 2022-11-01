@@ -1,5 +1,6 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:pay_app/widget/widget_faild_companies.dart';
 
 class CompaniesLogin extends StatefulWidget {
@@ -55,6 +56,12 @@ class _CompaniesLoginState extends State<CompaniesLogin> {
       appBar: AppBar(
         backgroundColor: const Color(0xff0E3255),
         toolbarHeight: 85.h,
+        centerTitle: true,
+        title: Text(
+          'New_registration'.tr,
+          style: TextStyle(
+              color: Colors.white, fontWeight: FontWeight.w500, fontSize: 19.h),
+        ),
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
               bottomRight: Radius.circular(11.0),
@@ -66,7 +73,7 @@ class _CompaniesLoginState extends State<CompaniesLogin> {
             icon: const Icon(
               Icons.arrow_forward_ios,
               color: Colors.white,
-              size: 23,
+              size: 20,
             ),
           ),
         ],
@@ -81,33 +88,33 @@ class _CompaniesLoginState extends State<CompaniesLogin> {
               height: 32.h,
             ),
             const widget_text_companies(
-              name: 'Firest Name',
+              name: 'First_Name',
             ),
             SizedBox(
               height: 12.h,
             ),
             WidgetTextFaildCompanies(
-              text: 'English onlys',
+              text: 'Enter First Name',
               fierstnameTextController: _fierstnameTextController,
             ),
             SizedBox(
               height: 16.h,
             ),
             const widget_text_companies(
-              name: 'Lest Name',
+              name: 'last_name',
             ),
             SizedBox(
               height: 12.h,
             ),
             WidgetTextFaildCompanies(
-              text: 'English onlys',
+              text: 'Enter Last Name',
               fierstnameTextController: _lestnameTextController,
             ),
             SizedBox(
               height: 16.h,
             ),
             const widget_text_companies(
-              name: 'Trade Name',
+              name: 'Trade_Name',
             ),
             SizedBox(
               height: 12.h,
@@ -118,7 +125,7 @@ class _CompaniesLoginState extends State<CompaniesLogin> {
               height: 16.h,
             ),
             const widget_text_companies(
-              name: 'Trade Name',
+              name: 'Trade_Name',
             ),
             SizedBox(
               height: 12.h,
@@ -128,7 +135,7 @@ class _CompaniesLoginState extends State<CompaniesLogin> {
               height: 16.h,
             ),
             const widget_text_companies(
-              name: 'i ban',
+              name: 'i_ban',
             ),
             SizedBox(
               height: 12.h,
@@ -138,7 +145,7 @@ class _CompaniesLoginState extends State<CompaniesLogin> {
               height: 16.h,
             ),
             const widget_text_companies(
-              name: 'Phone',
+              name: 'phone',
             ),
             SizedBox(
               height: 12.h,
@@ -148,7 +155,7 @@ class _CompaniesLoginState extends State<CompaniesLogin> {
               height: 16.h,
             ),
             const widget_text_companies(
-              name: 'email',
+              name: 'Email',
             ),
             SizedBox(
               height: 12.h,
@@ -158,7 +165,7 @@ class _CompaniesLoginState extends State<CompaniesLogin> {
               height: 16.h,
             ),
             const widget_text_companies(
-              name: 'facebook link',
+              name: 'facebook_link',
             ),
             SizedBox(
               height: 12.h,
@@ -169,16 +176,19 @@ class _CompaniesLoginState extends State<CompaniesLogin> {
               height: 16.h,
             ),
             const widget_text_companies(
-              name: 'instagram link',
+              name: 'Optional',
             ),
             SizedBox(
               height: 12.h,
             ),
             widget_feial_instageam(
                 instagramTextController: _instagramTextController),
-            SizedBox(height:37.h ,),
-            const widget_button(name: 'New Registration',),
-            
+            SizedBox(
+              height: 37.h,
+            ),
+            const widget_button(
+              name: 'New_registration',
+            ),
           ],
         ),
       ),
@@ -188,9 +198,11 @@ class _CompaniesLoginState extends State<CompaniesLogin> {
 
 class widget_button extends StatelessWidget {
   const widget_button({
-    Key? key, required this.name,
+    Key? key,
+    required this.name,
   }) : super(key: key);
-final String name;
+  final String name;
+
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -198,8 +210,7 @@ final String name;
       child: Padding(
         padding: const EdgeInsetsDirectional.only(end: 33, start: 33),
         child: ElevatedButton(
-          onPressed: () async {
-          },
+          onPressed: () async {},
           style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8).r,
@@ -208,7 +219,7 @@ final String name;
             primary: const Color(0xffF58A07),
           ),
           child: Text(
-         name,
+            name.tr,
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.w500,
@@ -216,7 +227,6 @@ final String name;
             ),
             textAlign: TextAlign.center,
           ),
-
         ),
       ),
     );
@@ -253,7 +263,7 @@ class widget_feial_instageam extends StatelessWidget {
             color: Color(0xff0E3255),
             size: 18,
           ),
-          labelText: 'my choice',
+          labelText: 'my choice'.tr,
           labelStyle: TextStyle(
               fontSize: 13.sp,
               fontStyle: FontStyle.italic,
@@ -311,7 +321,7 @@ class widget_feaild_facebook extends StatelessWidget {
             color: Color(0xff0E3255),
             size: 18,
           ),
-          labelText: 'my choice',
+          labelText: 'my choice'.tr,
           labelStyle: TextStyle(
               fontSize: 13.sp,
               fontStyle: FontStyle.italic,
@@ -369,7 +379,7 @@ class widget_feaild_email extends StatelessWidget {
             color: Color(0xff0E3255),
             size: 18,
           ),
-          labelText: 'email',
+          labelText: 'email'.tr,
           labelStyle: TextStyle(
               fontSize: 13.sp,
               fontStyle: FontStyle.italic,
@@ -427,7 +437,7 @@ class widget_feaild_phone extends StatelessWidget {
             color: Color(0xff0E3255),
             size: 18,
           ),
-          labelText: 'phone',
+          labelText: 'phone'.tr,
           labelStyle: TextStyle(
               fontSize: 13.sp,
               fontStyle: FontStyle.italic,
@@ -543,7 +553,7 @@ class widget_feaild_bank extends StatelessWidget {
             color: Color(0xff0E3255),
             size: 18,
           ),
-          labelText: 'bank',
+          labelText: 'bank'.tr,
           labelStyle: TextStyle(
               fontSize: 13.sp,
               fontStyle: FontStyle.italic,
@@ -601,7 +611,7 @@ class widget_trade_name extends StatelessWidget {
             color: Color(0xff0E3255),
             size: 18,
           ),
-          labelText: 'Business name',
+          labelText: 'Business name'.tr,
           labelStyle: TextStyle(
               fontSize: 13.sp,
               fontStyle: FontStyle.italic,
@@ -641,7 +651,7 @@ class widget_text_companies extends StatelessWidget {
     return Padding(
       padding: const EdgeInsetsDirectional.only(start: 17),
       child: Text(
-        name,
+        name.tr,
         style: TextStyle(
           color: const Color(0xff0E3255),
           fontWeight: FontWeight.w500,
