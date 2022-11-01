@@ -6,7 +6,7 @@ import 'package:pay_app/screen/auth/account_type.dart';
 import 'package:pay_app/screen/auth/card_details.dart';
 import 'package:pay_app/screen/auth/client_login.dart';
 import 'package:pay_app/screen/auth/companies_login.dart';
-import 'package:pay_app/screen/auth/login.dart';
+import 'package:pay_app/screen/auth/login_screen.dart';
 import 'package:pay_app/screen/auth/single_login.dart';
 import 'package:pay_app/screen/balance/balance_%D9%8Dscreen.dart';
 import 'package:pay_app/screen/card/card_screen.dart';
@@ -37,7 +37,7 @@ class AppRoutes {
     GetPage(name: Routes.Launch, page: () => const  Launch()),
     GetPage(name: Routes.boarding, page: () => const OutBoardingScreen()),
     GetPage(name: Routes.language, page: () => const ChoseLanguage()),
-    GetPage(name: Routes.login, page: () => const Login()),
+    GetPage(name: Routes.login, page: () => const LoginScreen()),
     GetPage(name: Routes.AccountType, page: () => const AccountType()),
     GetPage(name: Routes.CompaniesLogin, page: () => const CompaniesLogin()),
     GetPage(name: Routes.SingleLogin, page: () => const SingleLogin()),
