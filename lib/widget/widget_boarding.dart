@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-class widget_boarding extends StatelessWidget {
-  const widget_boarding({
+class BoardingItem extends StatelessWidget {
+  const BoardingItem({
     Key? key, required this.ImagePage, required this.Title,  required this.Title2,
   }) : super(key: key);
   final String ImagePage;
   final String Title;
-
   final String Title2;
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
