@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:pay_app/bindings/app_bindings.dart';
 import 'package:pay_app/controller/settings_controller.dart';
 import 'package:pay_app/routes/routes.dart';
-import 'package:pay_app/screen/page_view_screen/chose_language.dart';
+import 'package:pay_app/utils/constants.dart';
 import 'package:pay_app/utils/local.dart';
 import 'package:pay_app/utils/preferences_manager.dart';
 
@@ -24,8 +25,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    SettingsController _controller = Get.put(SettingsController());
-
+    final SettingsController controller = Get.put(SettingsController());
+    // PreferencesManager.clearData(key: Const.KEY_BOARDING);
     return ScreenUtilInit(
         designSize: const Size(375, 812),
         minTextAdapt: true,
@@ -33,9 +34,10 @@ class MyApp extends StatelessWidget {
         builder: (context, child) {
           return GetMaterialApp(
             debugShowCheckedModeBanner: false,
-            initialRoute: Routes.login,
+            initialBinding: AppBindings(),
+            initialRoute: Routes.Launch,
             translations: MyTranslations(),
-            locale: _controller.getAppLocale(),
+            locale: controller.getAppLocale(),
             getPages: AppRoutes.routesPages,
           );
         });

@@ -1,7 +1,6 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pay_app/widget/widget_faild_companies.dart';
 
 class SingleLogin extends StatefulWidget {
   const SingleLogin({Key? key}) : super(key: key);

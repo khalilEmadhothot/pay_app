@@ -13,9 +13,9 @@ import 'package:pay_app/screen/card/card_screen.dart';
 import 'package:pay_app/screen/fee/customer_invoice.dart';
 import 'package:pay_app/screen/fee/fee_screen.dart';
 import 'package:pay_app/screen/messages/messages_screen.dart';
-import 'package:pay_app/screen/page_view_screen/chose_language.dart';
-import 'package:pay_app/screen/page_view_screen/launch.dart';
-import 'package:pay_app/screen/page_view_screen/out_boarding_screen.dart';
+import 'package:pay_app/screen/language_screen.dart';
+import 'package:pay_app/screen/launch_screen.dart';
+import 'package:pay_app/screen/boarding_screen.dart';
 import 'package:pay_app/screen/raffles/all_raffles.dart';
 import 'package:pay_app/screen/raffles/details_raffles.dart';
 import 'package:pay_app/screen/raffles/withdrawal_request.dart';
@@ -31,13 +31,15 @@ import 'package:pay_app/screen/store/store_business.dart';
 import 'package:pay_app/screen/store/store_success.dart';
 import 'package:pay_app/screen/store/view_products.dart';
 
-class AppRoutes {
+import '../bindings/login_bindings.dart';
 
+class AppRoutes {
   static final routesPages = [
-    GetPage(name: Routes.Launch, page: () => const  Launch()),
-    GetPage(name: Routes.boarding, page: () => const OutBoardingScreen()),
-    GetPage(name: Routes.language, page: () => const ChoseLanguage()),
-    GetPage(name: Routes.login, page: () => const LoginScreen()),
+    GetPage(name: Routes.Launch, page: () => LaunchScreen()),
+    GetPage(name: Routes.boarding, page: () => BoardingScreen()),
+    GetPage(name: Routes.language, page: () => const LanguageScreen()),
+    GetPage(
+        name: Routes.login, page: () => LoginScreen(), binding: LoginBinging()),
     GetPage(name: Routes.AccountType, page: () => const AccountType()),
     GetPage(name: Routes.CompaniesLogin, page: () => const CompaniesLogin()),
     GetPage(name: Routes.SingleLogin, page: () => const SingleLogin()),
@@ -50,33 +52,36 @@ class AppRoutes {
     GetPage(name: Routes.StoreSuccess, page: () => const StoreSuccess()),
     GetPage(name: Routes.StoreBusiness, page: () => const StoreBusiness()),
     GetPage(name: Routes.ViewProduct, page: () => const ViewProduct()),
-    GetPage(name: Routes.MerchantBusiness, page: () => const MerchantBusiness()),
+    GetPage(
+        name: Routes.MerchantBusiness, page: () => const MerchantBusiness()),
     //   //الرصيد
     GetPage(name: Routes.BalanceScreen, page: () => const BalanceScreen()),
     //   // العمليات
     GetPage(name: Routes.AllProcesses, page: () => const AllProcesses()),
-    GetPage(name: Routes.DetailsProcesses, page: () => const DetailsProcesses()),
+    GetPage(
+        name: Routes.DetailsProcesses, page: () => const DetailsProcesses()),
     //   //السحوبات
     GetPage(name: Routes.AllRaffles, page: () => const AllRaffles()),
     GetPage(name: Routes.DetailsRaffles, page: () => const DetailsRaffles()),
-    GetPage(name: Routes.WithdrawalRequest, page: () => const WithdrawalRequest()),
+    GetPage(
+        name: Routes.WithdrawalRequest, page: () => const WithdrawalRequest()),
     //   //الرسائل
     GetPage(name: Routes.MessagesScreen, page: () => const MessagesScreen()),
     //   //الاعدادات
     GetPage(name: Routes.SettingsScreen, page: () => const SettingsScreen()),
     GetPage(name: Routes.Connect, page: () => const Connect()),
     GetPage(name: Routes.EditProfile, page: () => const EditProfile()),
-    GetPage(name: Routes.InformationAbout, page: () => const InformationAbout()),
+    GetPage(
+        name: Routes.InformationAbout, page: () => const InformationAbout()),
     GetPage(name: Routes.Profial, page: () => const Profial()),
     GetPage(name: Routes.CardScreen, page: () => const CardScreen()),
     //Fee
     GetPage(name: Routes.FeeScreen, page: () => const FeeScreen()),
     GetPage(name: Routes.CustomerInvoice, page: () => const CustomerInvoice()),
   ];
-
 }
 
-class Routes{
+class Routes {
   static const Launch = '/Launch';
   static const boarding = '/boarding';
   static const language = '/language';

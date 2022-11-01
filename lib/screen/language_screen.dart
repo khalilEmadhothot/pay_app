@@ -2,14 +2,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ChoseLanguage extends StatefulWidget {
-  const ChoseLanguage({Key? key}) : super(key: key);
+class LanguageScreen extends StatefulWidget {
+  const LanguageScreen({Key? key}) : super(key: key);
 
   @override
-  State<ChoseLanguage> createState() => _ChoseLanguageState();
+  State<LanguageScreen> createState() => _LanguageScreenState();
 }
 
-class _ChoseLanguageState extends State<ChoseLanguage> {
+class _LanguageScreenState extends State<LanguageScreen> {
   String _gender = '';
 
   @override

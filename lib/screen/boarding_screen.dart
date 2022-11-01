@@ -1,72 +1,48 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pay_app/controller/boarding_controller.dart';
 import 'package:pay_app/routes/routes.dart';
 import 'package:pay_app/utils/constants.dart';
 import 'package:pay_app/utils/preferences_manager.dart';
-import '../../widget/out_boarding_indicator.dart';
-import '../../widget/widget_boarding.dart';
+import '../widget/out_boarding_indicator.dart';
+import '../widget/widget_boarding.dart';
 
-class OutBoardingScreen extends StatefulWidget {
-  const OutBoardingScreen({Key? key}) : super(key: key);
 
-  @override
-  State<OutBoardingScreen> createState() => _OutBoardingScreenState();
-}
+class BoardingScreen extends GetView<BoardingsController> {
 
-class _OutBoardingScreenState extends State<OutBoardingScreen> {
-  late PageController _pageController;
-  int _currentPage = 0;
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    _pageController = PageController();
-  }
-
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    _pageController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Column(
+      body: GetBuilder<BoardingsController>(builder: (controller) => Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
             child: PageView(
-              controller: _pageController,
+              controller: controller.pageController,
               scrollDirection: Axis.horizontal,
-              onPageChanged: (int page) {
-                setState(() {
-                  _currentPage = page;
-                });
-              },
+              onPageChanged: (int page) => controller.getCurrentPage(currentPage: page),
               children: const [
                 widget_boarding(
                   ImagePage: 'images/image_page_view_one.png',
                   Title: 'ادفعلي  ',
                   Title2:
-                      ' استلم قيمة مبيعاتك من زبونك قبل ان تخرج\n            بضاعتك من متجرك او منزلك . ',
+                  ' استلم قيمة مبيعاتك من زبونك قبل ان تخرج\n            بضاعتك من متجرك او منزلك . ',
                 ),
                 widget_boarding(
                   ImagePage: 'images/image_page_view_tow.png',
                   Title: 'ادفعلي  ',
                   Title2:
-                      ' استلم قيمة مبيعاتك من زبونك قبل ان تخرج\n            بضاعتك من متجرك او منزلك . ',
+                  ' استلم قيمة مبيعاتك من زبونك قبل ان تخرج\n            بضاعتك من متجرك او منزلك . ',
                 ),
                 widget_boarding(
                   ImagePage: 'images/image_page_view_three.png',
                   Title: 'ادفعلي  ',
                   Title2:
-                      ' استلم قيمة مبيعاتك من زبونك قبل ان تخرج\n            بضاعتك من متجرك او منزلك . ',
+                  ' استلم قيمة مبيعاتك من زبونك قبل ان تخرج\n            بضاعتك من متجرك او منزلك . ',
                 ),
               ],
             ),
@@ -79,15 +55,15 @@ class _OutBoardingScreenState extends State<OutBoardingScreen> {
             children: [
               OutBoardingIndicator(
                 marginEnd: 14,
-                selected: _currentPage == 0,
+                selected: controller.currentPage == 0,
               ),
               OutBoardingIndicator(
                 marginEnd: 14,
-                selected: _currentPage == 1,
+                selected: controller.currentPage == 1,
               ),
               OutBoardingIndicator(
                 marginEnd: 14,
-                selected: _currentPage == 2,
+                selected: controller.currentPage == 2,
               ),
             ],
           ),
@@ -104,10 +80,6 @@ class _OutBoardingScreenState extends State<OutBoardingScreen> {
                     maintainSize: true,
                     maintainState: true,
                     child: InkWell(
-                      onTap: () {
-                        PreferencesManager.saveAppData(key: Const.KEY_BOARDING, value: true)
-                            .then((value) => Get.offAndToNamed(Routes.language));
-                      },
                       child: Text(
                         'تخطى',
                         style: TextStyle(
@@ -116,13 +88,10 @@ class _OutBoardingScreenState extends State<OutBoardingScreen> {
                             fontSize: 20.h,
                             fontWeight: FontWeight.w600),
                       ),
+                      onTap: () => Get.toNamed(Routes.language)
                     )),
                 InkWell(
-                  onTap: () {
-                    _pageController.nextPage(
-                        duration: const Duration(seconds: 1),
-                        curve: Curves.easeInCirc);
-                  },
+
                   child: Container(
                     width: 55.w,
                     height: 55.h,
@@ -134,6 +103,15 @@ class _OutBoardingScreenState extends State<OutBoardingScreen> {
                       color: Colors.white,
                     ),
                   ),
+                  onTap: () {
+                    if(controller.currentPage == 2){
+                      Get.toNamed(Routes.language);
+                    }else{
+                      controller.pageController.nextPage(
+                          duration: const Duration(seconds: 1),
+                          curve: Curves.easeInCirc);
+                    }
+                  }
                 ),
               ],
             ),
@@ -142,7 +120,7 @@ class _OutBoardingScreenState extends State<OutBoardingScreen> {
             height: 45,
           ),
         ],
-      ),
+      )),
     );
   }
 }
