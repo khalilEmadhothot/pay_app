@@ -122,7 +122,7 @@ class MyTranslations implements Translations {
           'privacy_policy_': 'سياسة الخصوصية',
           'Select_Language': 'اختيار اللغة',
           'Arabic': 'العربية',
-          'English': 'إنجليزي',
+          'English': 'الإنجليزية',
           'Edit_profile': 'تعديل الملف الشخصي',
           'emphasis': 'تأكيد',
           'Commercial_License_Number': 'رقم الترخيص التجاري:',

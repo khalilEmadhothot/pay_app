@@ -14,6 +14,8 @@ import 'package:pay_app/utils/preferences_manager.dart';
 class SettingsController extends GetxController {
   RxBool isLoading = false.obs;
   String languageSelected = '';
+  String userType = '';
+  bool userSelected = true;
 
 
 //عرض اللغات
@@ -30,16 +32,15 @@ class SettingsController extends GetxController {
 
   @override
   void onInit() {
-
     super.onInit();
   }
 
   @override
   void dispose() {
-
     super.dispose();
   }
-//بجيب الوكل تاع التطبيق حاليا لغة الجهاز حاليا بناء عليها بعمل فحص عشان اجيب اللغه
+
+  //بجيب الوكل تاع التطبيق حاليا لغة الجهاز حاليا بناء عليها بعمل فحص عشان اجيب اللغه
   Locale? getAppLocale() {
     String? language = PreferencesManager.getAppData(key: Const.KEY_LANGUAGE);
     if (language == Const.KEY_LANGUAGE_AR) {
@@ -47,7 +48,7 @@ class SettingsController extends GetxController {
     } else if (language == Const.KEY_LANGUAGE_EN) {
       return const Locale('en');
     } else {
-      return const Locale('ar');
+      return const Locale('en');
     }
   }
 

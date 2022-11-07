@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:pay_app/controller/settings_controller.dart';
+import 'package:pay_app/utils/constants.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -58,7 +59,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 backgroundColor: Colors.white,
                 radius: 54,
                 child: Image.asset(
-                  'images/images_settings.png',
+                  '${Const.images}images_settings.png',
                   width: 200,
                   height: 200,
                 ),

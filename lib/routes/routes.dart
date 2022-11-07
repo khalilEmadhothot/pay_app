@@ -37,7 +37,7 @@ class AppRoutes {
   static final routesPages = [
     GetPage(name: Routes.Launch, page: () => LaunchScreen()),
     GetPage(name: Routes.boarding, page: () => BoardingScreen()),
-    GetPage(name: Routes.language, page: () => const LanguageScreen()),
+    GetPage(name: Routes.language, page: () => LanguageScreen()),
     GetPage(
         name: Routes.login, page: () => LoginScreen(), binding: LoginBinging()),
     GetPage(name: Routes.AccountType, page: () => const AccountType()),

@@ -6,9 +6,15 @@ import 'package:pay_app/controller/login_controller.dart';
 
 class LoginScreen extends GetView<LoginController> {
 
+  final LoginController _controller = Get.put(LoginController());
+
+  LoginScreen({this.userType});
+
+  String? userType;
 
   @override
   Widget build(BuildContext context) {
+    print('LOGIN USER TYPE: $userType');
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,

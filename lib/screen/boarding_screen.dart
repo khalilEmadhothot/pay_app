@@ -63,7 +63,7 @@ class BoardingScreen extends GetView<BoardingsController> {
                             maintainState: true,
                             child: InkWell(
                                 child: Text(
-                                  'تخطى',
+                                  'Skip'.tr,
                                   style: TextStyle(
                                       color: Color(0xff063255),
                                       decoration: TextDecoration.underline,

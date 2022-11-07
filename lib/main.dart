@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final SettingsController controller = Get.put(SettingsController());
-    // PreferencesManager.clearData(key: Const.KEY_BOARDING);
+    PreferencesManager.clearData(key: Const.KEY_BOARDING);
     return ScreenUtilInit(
         designSize: const Size(375, 812),
         minTextAdapt: true,

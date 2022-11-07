@@ -1,17 +1,14 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:pay_app/controller/settings_controller.dart';
+import 'package:pay_app/routes/routes.dart';
+import 'package:pay_app/screen/auth/login_screen.dart';
 import 'package:pay_app/utils/constants.dart';
 
-class LanguageScreen extends StatefulWidget {
-  const LanguageScreen({Key? key}) : super(key: key);
 
-  @override
-  State<LanguageScreen> createState() => _LanguageScreenState();
-}
-
-class _LanguageScreenState extends State<LanguageScreen> {
-  String _gender = '';
+class LanguageScreen extends GetView<SettingsController> {
 
   @override
   Widget build(BuildContext context) {
@@ -41,46 +38,53 @@ class _LanguageScreenState extends State<LanguageScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Column(
+                    GetBuilder<SettingsController>(builder: (controller) => Column(
                       children: [
                         Stack(
                           //'images/image_client.png'
                           children: [
-                            Container(
-                              width: 150.w,
-                              height: 165.h,
-                              decoration: BoxDecoration(
-                                color: const Color(0xffEDF7FF),
-                                borderRadius: BorderRadius.circular(20).r,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                    alignment: AlignmentDirectional.topEnd,
-                                    child: RadioListTile<String>(
-                                      activeColor: Colors.black,
-                                      contentPadding: EdgeInsets.zero,
-                                      title: const Text(''),
-                                      value: 'C',
-                                      groupValue: _gender,
-                                      onChanged: (String? value) {
-                                        if (value != null) {
-                                          setState(() {
-                                            _gender = value;
-                                          });
-                                        }
-                                      },
+                            InkWell(
+                              child: Container(
+                                width: 150.w,
+                                height: 165.h,
+                                decoration: BoxDecoration(
+                                  color: const Color(0xffEDF7FF),
+                                  borderRadius: BorderRadius.circular(20).r,
+                                ),
+                                child: Column(
+                                  children: [
+                                    Align(
+                                        alignment: AlignmentDirectional.topEnd,
+                                        child: RadioListTile<String>(
+                                          activeColor: Colors.black,
+                                          contentPadding: EdgeInsets.zero,
+                                          title: const Text(''),
+                                          selected: controller.userSelected,
+                                          value: 'C',
+                                          groupValue: controller.userType,
+                                          onChanged: (String? value) {
+                                            if (value != null) {
+                                              controller.userType = value;
+                                              controller.update();
+                                              Get.off(LoginScreen(userType: controller.userType));
+                                            }
+                                          },
+                                        )
                                     ),
-                                  ),
-                                  Align(
-                                      alignment: AlignmentDirectional.center,
-                                      child: Image.asset(
-                                        '${Const.icons}icon_client.png',
-                                        fit: BoxFit.contain,
-                                        height: 100,
-                                      )),
-                                ],
+                                    Align(
+                                        alignment: AlignmentDirectional.center,
+                                        child: Image.asset(
+                                          '${Const.icons}icon_client.png',
+                                          fit: BoxFit.contain,
+                                          height: 100,
+                                        )),
+                                  ],
+                                ),
                               ),
+                              onTap: () {
+                                controller.userSelected = true;
+                                controller.update();
+                              },
                             ),
                           ],
                         ),
@@ -96,46 +100,54 @@ class _LanguageScreenState extends State<LanguageScreen> {
                           ),
                         ),
                       ],
-                    ),
-                    Column(
+                    )),
+                    GetBuilder<SettingsController>(builder: (controller) => Column(
                       children: [
                         Stack(
                           children: [
-                            Container(
-                              width: 150.w,
-                              height: 165.h,
-                              decoration: BoxDecoration(
-                                color: const Color(0xffEDF7FF),
-                                borderRadius: BorderRadius.circular(20).r,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                    alignment: AlignmentDirectional.topEnd,
-                                    child: RadioListTile<String>(
-                                      activeColor: Colors.black,
-                                      contentPadding: EdgeInsets.zero,
-                                      title: const Text(''),
-                                      value: 'F',
-                                      groupValue: _gender,
-                                      onChanged: (String? value) {
-                                        if (value != null) {
-                                          setState(() {
-                                            _gender = value;
-                                          });
-                                        }
-                                      },
+                            InkWell(
+                              child: Container(
+                                width: 150.w,
+                                height: 165.h,
+                                decoration: BoxDecoration(
+                                  color: const Color(0xffEDF7FF),
+                                  borderRadius: BorderRadius.circular(20).r,
+                                ),
+                                child: Column(
+                                  children: [
+                                    Align(
+                                      alignment: AlignmentDirectional.topEnd,
+                                      child: RadioListTile<String>(
+                                        selected: controller.userSelected,
+                                        activeColor: Colors.black,
+                                        contentPadding: EdgeInsets.zero,
+                                        title: const Text(''),
+                                        value: 'F',
+                                        groupValue: controller.userType,
+                                        onChanged: (String? value) {
+                                          if (value != null) {
+                                            controller.userType = value;
+                                            controller.update();
+                                            Get.off(LoginScreen(userType: controller.userType));
+                                          }
+                                        },
+                                      )
                                     ),
-                                  ),
-                                  Align(
-                                      alignment: AlignmentDirectional.center,
-                                      child: Image.asset(
-                                        '${Const.icons}icon_merchant.png',
-                                        fit: BoxFit.contain,
-                                        height: 95,
-                                      )),
-                                ],
+                                    Align(
+                                        alignment: AlignmentDirectional.center,
+                                        child: Image.asset(
+                                          '${Const.icons}icon_merchant.png',
+                                          fit: BoxFit.contain,
+                                          height: 95,
+                                        )),
+                                  ],
+                                ),
                               ),
+                              onTap: () {
+                                controller.userSelected = true;
+                                print('SELECTED: ${controller.userSelected}');
+                                controller.update();
+                              },
                             ),
                           ],
                         ),
@@ -151,7 +163,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                           ),
                         ),
                       ],
-                    ),
+                    ))
                   ],
                 ),
               ),
@@ -164,22 +176,31 @@ class _LanguageScreenState extends State<LanguageScreen> {
                   Card(
                     elevation: 4,
                     child: ElevatedButton(
-                      onPressed: () async {},
+                      onPressed: () {
+                        controller.saveLanguage(Const.KEY_LANGUAGE_EN);
+                        controller.update();
+                      },
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8).r,
                         ),
-                        minimumSize: Size(117.68.w, 48.h),
-                        primary: Colors.white,
+                        minimumSize: Size(80.68.w, 48.h),
+                        backgroundColor: Colors.white,
                       ),
-                      child: Text(
-                        'الانجليزيه'.tr,
-                        style: TextStyle(
-                          color: const Color(0xff0E3255),
-                          fontWeight: FontWeight.w600,
-                          fontSize: 17.sp,
-                        ),
-                        textAlign: TextAlign.center,
+                      child: Row(
+                        children: [
+                          Text(
+                            'English'.tr,
+                            style: TextStyle(
+                              color: const Color(0xff0E3255),
+                              fontWeight: FontWeight.w600,
+                              fontSize: 17.sp,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(width: 10),
+                          Image.asset('${Const.icons}icon_english.png')
+                        ],
                       ),
                     ),
                   ),
@@ -189,22 +210,31 @@ class _LanguageScreenState extends State<LanguageScreen> {
                   Card(
                     elevation: 4,
                     child: ElevatedButton(
-                      onPressed: () async {},
+                      onPressed: () {
+                        controller.saveLanguage(Const.KEY_LANGUAGE_AR);
+                        controller.update();
+                      },
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8).r,
                         ),
-                        minimumSize: Size(117.68.w, 48.h),
-                        primary: Colors.white,
+                        minimumSize: Size(80.68.w, 48.h),
+                        backgroundColor: Colors.white,
                       ),
-                      child: Text(
-                        'العربيه'.tr,
-                        style: TextStyle(
-                          color: const Color(0xff0E3255),
-                          fontWeight: FontWeight.w600,
-                          fontSize: 17.sp,
-                        ),
-                        textAlign: TextAlign.center,
+                      child: Row(
+                        children: [
+                          Text(
+                            'Arabic'.tr,
+                            style: TextStyle(
+                              color: const Color(0xff0E3255),
+                              fontWeight: FontWeight.w600,
+                              fontSize: 17.sp,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(width: 10),
+                          SvgPicture.asset('${Const.icons}icon_arabic.svg')
+                        ],
                       ),
                     ),
                   ),
